@@ -1,8 +1,42 @@
-<html> 
-<head> 
-    <title>My Test Page</title>
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Rhythm</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body> 
-    <h1>Welcome to My Test Page</h1> 
-    <p>This is a simple HTML page for testing purposes.</p>
+
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+
+        <div id="ui-layer">
+            <div id="score-display">SCORE: <span id="score-value">0</span></div>
+            <div id="combo-display">COMBO: <span id="combo-value">0</span></div>
+
+            <div id="start-screen" class="screen">
+                <h1>NEON RHYTHM</h1>
+                <p>Press [SPACE] to Start</p>
+                <p class="controls">Controls: D F J K</p>
+            </div>
+
+            <div id="game-over-screen" class="screen hidden">
+                <h1>GAME OVER</h1>
+                <p>Final Score: <span id="final-score">0</span></p>
+                <p>Press [SPACE] to Restart</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load scripts in order (No modules for file:// compatibility) -->
+    <script src="js/song.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
 </html>

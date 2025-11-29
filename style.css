@@ -1,0 +1,116 @@
+:root {
+    --bg-color: #050510;
+    --lane-color: #1a1a2e;
+    --lane-border: #303050;
+    --neon-blue: #00f3ff;
+    --neon-pink: #ff00ff;
+    --text-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 800px; /* Aspect ratio control */
+    background: linear-gradient(180deg, #000000 0%, #1a1a2e 100%);
+    box-shadow: 0 0 50px rgba(0, 243, 255, 0.1);
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#ui-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#score-display, #combo-display {
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+#score-display {
+    top: 20px;
+    left: 20px;
+}
+
+#combo-display {
+    top: 50px;
+    left: 20px;
+    color: var(--neon-pink);
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    pointer-events: auto;
+}
+
+.screen.hidden {
+    display: none;
+}
+
+h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--neon-blue);
+    text-shadow: 0 0 20px var(--neon-blue);
+    letter-spacing: 5px;
+}
+
+p {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px white;
+    animation: pulse 1.5s infinite alternate;
+}
+
+.controls {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #aaa;
+    animation: none;
+}
+
+@keyframes pulse {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}
